@@ -1,0 +1,30 @@
+<% include ./partials/header.ejs %>
+
+<!-- Material form login -->
+<form id="logIn" action="/login" method="post">
+    <p class="h4 text-center mb-4">Sign in</p>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-phone prefix black-text"></i>
+        <input name="username" type="number" id="materialFormLoginEmailEx" class="form-control" required>
+        <label for="username">Your Contact Number</label>
+    </div>
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix black-text"></i>
+        <input type="password" name="password" id="materialFormLoginPasswordEx" class="form-control" required>
+        <label for="password">Your password</label>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-default" type="submit">Login</button>
+    </div>
+</form>
+<center class="new-user">
+  <p>New User ?<b> <a href="/signUp">Click here to Sign Up</a></b></p>
+</center>
+<!-- Material form login -->
+
+<% include ./partials/footer.ejs %>

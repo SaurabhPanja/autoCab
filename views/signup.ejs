@@ -1,0 +1,102 @@
+<% include ./partials/header.ejs %>
+
+
+<!-- Material form register -->
+<form id="signUp" action="/signUp" method="post">
+  <p class="h4 text-center mb-4">Sign up</p>
+
+  <!-- Material input text -->
+  <div class="md-form">
+      <i class="fa fa-user prefix black-text"></i>
+      <input name="calledAs" type="text" id="materialFormRegisterNameEx" class="form-control" required>
+      <label for="calledAs">Your name</label>
+  </div>
+
+  <!-- Material input email -->
+  <div class="md-form">
+      <i class="fa fa-phone prefix black-text"></i>
+      <input type="number" name="username" id="materialFormRegisterEmailEx" class="form-control" required>
+      <label for="username">Your Contact Number</label>
+  </div>
+
+  <!-- Material input email -->
+  <div class="md-form">
+      <i class="fa fa-exclamation-triangle prefix black-text"></i>
+      <input name="contactNumber-confirm" type="number" id="materialFormRegisterConfirmEx" class="form-control" oninput="check(this)" required>
+      <label for="contactNumber-confirm">Confirm your Contact Number</label>
+  </div>
+
+  <!-- Material input password -->
+  <div class="md-form">
+      <i class="fa fa-lock prefix black-text"></i>
+      <input name="password" type="password" id="materialFormRegisterPasswordEx" class="form-control" required>
+      <label for="password">Your password</label>
+  </div>
+
+  <!-- Material input password -->
+  <div class="md-form">
+      <i class="fa fa-lock prefix black-text"></i>
+      <input name="pswd-confirm" type="password" id="materialFormRegisterPasswordEx" class="form-control" oninput="checkpswd(this)" required>
+      <label for="pswd-confirm">Confirm Your password</label>
+  </div>
+
+<br>
+  <!--Radio butons-->
+  <center>
+    <div class="form-group">
+        <h5>
+          <i class="fa fa-user-circle prefix black-text"></i>
+          <label for="type">Your are a</label>
+        </h5>
+
+    </div>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-purple btn-rounded btn-md form-check-label">
+          <input class="form-check-input" type="radio" name="type" autocomplete="off" required value="driver">Driver
+      </label>
+    </div>
+
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-purple btn-rounded btn-md form-check-label">
+          <input class="form-check-input" type="radio" name="type" autocomplete="off" value="passenger">Passenger
+      </label>
+    </div>
+
+  </center>
+
+  <!--Radio butons-->
+
+
+  <div class="text-center mt-4">
+      <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+
+
+</form>
+<!-- Material form register -->
+<center id="already-user">
+  <p>Already an User ? <a href="/login"><b>Log In</b></a></p>
+</center>
+
+<script language='javascript' type='text/javascript'>
+                 function check(input) {
+                     if (input.value != document.getElementById('materialFormRegisterEmailEx').value) {
+                         input.setCustomValidity('Contact Number Must be Matching.');
+                     } else {
+                         // input is valid -- reset the error message
+                         input.setCustomValidity('');
+                     }
+                 }
+
+                 function checkpswd(input) {
+                     if (input.value != document.getElementById('materialFormRegisterPasswordEx').value) {
+                         input.setCustomValidity('Password Must be Matching.');
+                     } else {
+                         // input is valid -- reset the error message
+                         input.setCustomValidity('');
+                     }
+                 }
+</script>
+</script>
+
+<% include ./partials/footer.ejs %>
