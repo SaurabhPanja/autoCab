@@ -6,7 +6,9 @@ var express               = require("express"),
     LocalStrategy         = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://localhost/autoCab");
+//mongoose.connect("mongodb://localhost/autoCab");
+mongoose.connect("mongodb://Admin:saurabh1@ds117128.mlab.com:17128/autocab")
+
 var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
@@ -79,6 +81,6 @@ function isLoggedIn(req, res, next){
 }
 
 
-app.listen(3000, function(){
-    console.log("server started.......");
+app.listen(process.env.PORT,process.env.IP, function(){
+    //console.log("server started.......");
 });
